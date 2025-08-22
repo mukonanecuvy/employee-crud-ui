@@ -15,22 +15,18 @@ export default function EmployeeSearch() {
     };
 
     return (
-        <div>
-            <h2>Search Employee by ID</h2>
-            <input
-                value={id}
-                onChange={e => setId(e.target.value)}
-                placeholder="Enter ID"
-            />
-            <button onClick={handleSearch}>Search</button>
+        <div className="max-w-md mx-auto p-6 bg-white shadow-card rounded-2xl space-y-4">
+            <h2 className="text-xl font-bold text-success">Search Employee by ID</h2>
+            <input value={id} onChange={e => setId(e.target.value)} placeholder="Enter ID" className="w-full border p-2 rounded focus:ring-2 focus:ring-success" />
+            <button onClick={handleSearch} className="w-full bg-success text-white py-2 rounded-lg hover:bg-green-700">Search</button>
 
             {employee ? (
-                <div>
+                <div className="space-y-2 mt-4">
                     <p>Name: {employee.name}</p>
                     <p>Code: {employee.employee_code}</p>
                     <p>Salary: {employee.salary}</p>
                 </div>
-            ) : <p>No employee found</p>}
+            ) : <p className="mt-2 text-gray-500">No employee found</p>}
         </div>
     );
 }
