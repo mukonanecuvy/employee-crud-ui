@@ -5,6 +5,8 @@ export default function EmployeeUpdate() {
     const [id, setId] = useState("");
     const [form, setForm] = useState({ name: "", employee_code: "", salary: "" });
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
